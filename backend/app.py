@@ -9,6 +9,7 @@ from flask_cors import CORS
 
 import numpy as np
 import matplotlib.pyplot as plt
+import io
 
 import os
 import PIL
@@ -27,8 +28,23 @@ from transformers import CLIPProcessor, CLIPModel
 import tensorflow as tf
 import keras
 
+# Import from external sources
+from .utils import gram_matrix, style_loss, content_loss, total_variation_loss
+
 app = Flask(__name__)
 CORS(app)
+
+TOTAL_VAR_WT = 1e-6
+STY_WT = 1e-6
+CONT_WT = 2.5e-8
+
+style_layer_names = [
+    "block1_conv1",
+    "block2_conv1",
+    "block3_conv1",
+    "block4_conv1",
+    "block5_conv1",
+]
 
 img_path = './model/GenshinCharacters'
 img_files = glob.glob(img_path + "/*.[jJpP][pPnN][gG]")
@@ -119,7 +135,7 @@ def deprocess_image(x):
     x = np.clip(x, 0, 255).astype("uint8")
     return x
 
-model = keras.models.load_model('./model/genshinfy.keras') # file doesn't exist yet
+model = keras.models.load_model('./model/genshinfy.keras') # loading models work
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -128,6 +144,13 @@ def predict():
         return jsonify({"error": "No text provided"}), 400
     text = request_data["text"]
     text = text.strip().lower()
+
+    if not "image" in request_data:
+        return jsonify({"error": "No image provided"}), 400
+
+    image_path = request_data["image"]
+    base_image = preprocess_image(image_path)
+    combination_image = tf.Variable(preprocess_image(image_path))
 
     # index through the dataset
     with torch.no_grad():
@@ -142,5 +165,55 @@ def predict():
     for idx, distance in indices_to_distance:
         style_reference_image = img_files[idx]
         break
+    
+    def compute_loss(combination_image, base_image, style_reference_image):
+        input_tensor = tf.concat(
+            [base_image, style_reference_image, combination_image], axis=0
+        )
+        features = model(input_tensor)
+        loss = tf.zeros(shape=())
 
-        
+        # add content loss
+        layer_features = features["block5_conv2"]
+        base_image_features = layer_features[0, :, :, :]
+        combination_features = layer_features[2, :, :, :]
+        loss = loss + CONT_WT * content_loss(
+            base_image_features, combination_features
+        )
+
+        # add style loss
+        for layer_name in style_layer_names:
+            layer_features = features[layer_name]
+            style_reference_features = layer_features[1, :, :, :]
+            combination_features = layer_features[2, :, :, :]
+            sl = style_loss(style_reference_features, combination_features)
+            loss += (STY_WT / len(style_layer_names)) * sl
+
+        # total variation loss
+        loss += TOTAL_VAR_WT * total_variation_loss(combination_image)
+        return loss
+    
+    @tf.function
+    def compute_loss_and_grads(combination_image, base_image, style_reference_image):
+        with tf.GradientTape() as tape:
+            loss = compute_loss(combination_image, base_image, style_reference_image)
+        grads = tape.gradient(loss, combination_image)
+        return loss, grads
+    
+    optimizer = model.optimizer
+    for i in range(1, 1001): #run 1000 iterations
+        loss, grads = compute_loss_and_grads(
+            combination_image, base_image, style_reference_image
+        )
+        optimizer.apply_gradients([(grads, combination_image)])
+
+    style_transferred = deprocess_image(combination_image.numpy())
+    output_image = Image.fromarray(style_transferred)
+    img_io = io.BytesIO()
+    output_image.save(img_io, "PNG")  # Save as PNG
+    img_io.seek(0)
+
+    return send_file(img_io, mimetype="image/png")
+
+if __name__ == "__main__":
+    app.run(debug=True)
