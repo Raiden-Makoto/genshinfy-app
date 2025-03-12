@@ -29,10 +29,11 @@ import tensorflow as tf
 import keras
 
 # Import from external sources
-from .utils import gram_matrix, style_loss, content_loss, total_variation_loss
+from utils import gram_matrix, style_loss, content_loss, total_variation_loss
 
 app = Flask(__name__)
 CORS(app)
+torch.set_num_threads(1)
 
 TOTAL_VAR_WT = 1e-6
 STY_WT = 1e-6
@@ -135,7 +136,11 @@ def deprocess_image(x):
     x = np.clip(x, 0, 255).astype("uint8")
     return x
 
-model = keras.models.load_model('./model/genshinfy.keras') # loading models work
+#model = keras.models.load_model('./model/Genshinfy Keras VGG19 Style Transfer.keras') # model might be too fat to load
+#VGG = keras.applications.vgg19.VGG19(weights="imagenet", include_top=False)
+#outputs_dict = dict([(layer.name, layer.output) for layer in VGG.layers])
+#model = keras.Model(inputs=VGG.inputs, outputs=outputs_dict)
+model = keras.saving.load_model('./model/Genshinfy.keras')
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -200,8 +205,14 @@ def predict():
         grads = tape.gradient(loss, combination_image)
         return loss, grads
     
+    #optimizer = keras.optimizers.SGD(
+    #    keras.optimizers.schedules.ExponentialDecay(
+    #        initial_learning_rate=100.0, decay_steps=100, decay_rate=0.96
+    #    )
+    #)
     optimizer = model.optimizer
-    for i in range(1, 1001): #run 1000 iterations
+
+    for i in range(1, 1201): #run 7200 iterations
         loss, grads = compute_loss_and_grads(
             combination_image, base_image, style_reference_image
         )
@@ -214,6 +225,12 @@ def predict():
     img_io.seek(0)
 
     return send_file(img_io, mimetype="image/png")
+
+
+#  MY DUMBASS FORGOT THE HOMEPAGE :SKULL:
+@app.route("/")  # Make sure this route exists
+def home():
+    return "Flask is working! I forgot to make this homepage lol."
 
 if __name__ == "__main__":
     app.run(debug=True)
