@@ -2,7 +2,8 @@ from flask import (
     Flask,
     request,
     jsonify,
-    send_file
+    send_file,
+    render_template
 )
 
 from flask_cors import CORS
@@ -230,7 +231,7 @@ def predict():
 #  MY DUMBASS FORGOT THE HOMEPAGE :SKULL:
 @app.route("/")  # Make sure this route exists
 def home():
-    return "Flask is working! I forgot to make this homepage lol."
+    return render_template("index.html")
 
 if __name__ == "__main__":
     app.run(debug=True)

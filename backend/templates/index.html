@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <title>Genshinfy App Backend</title>
+        <style>
+            #font-face {
+                font-family: 'GenshinImpact';
+                src: url("{{ url_for('static', filename='fonts/zh-cn.ttf')}}") format("truetype");
+            }
+            body {
+                font-family: 'GenshinImpact', sans-serif;
+                text-align: center;
+                padding: 50px; 
+                background-color: black;
+            }
+            .container{
+                max-width: 95%;
+                margin: auto;
+                background: white;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            }
+            h1{
+                color: rgb(143, 16, 143); ;
+            }
+            p{
+                color: #555;
+                font-size: 22px;
+            }
+            .redirect-button {
+                background-color: purple; /* Purple color */
+                color: white; /* White text */
+                border: none; /* No border */
+                border-radius: 12px; /* Rounded corners */
+                padding: 15px 32px; /* Padding for better size */
+                font-size: 16px; /* Text size */
+                cursor: pointer; /* Pointer cursor on hover */
+                transition: background-color 0.3s ease; /* Smooth transition for hover */
+            }
+            /* Hover effect */
+            .redirect-button:hover {
+                background-color: darkviolet; /* Darker purple when hovered */
+            }
+            img {
+                max-width: 100%;
+                height: auto;
+                margin-top: 20px;
+                border-radius: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Welcome to Genshinfy.App</h1>
+            <p>It looks like you've accidentally found the backend home page.</p>
+            <button class="redirect-button" onclick="window.location.href='http://localhost:3000';">
+                Go to the <b>Genshinfy.App</b> Home Page
+            </button>
+            <img src="{{ url_for('static', filename='raidenwallpaper.jpg') }}" alt="Genshinfy.App logo">
+        </div>
+    </body>
+</html>
