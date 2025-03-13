@@ -36,6 +36,11 @@ export default function Home() {
         method: "POST",
         body: formData,
       });
+      if (!response.ok) {
+        const errorText = await response.text();
+        alert(`Error: ${response.status} - ${errorText}`);
+        throw new Error(`Error: ${response.status} - ${errorText}`);
+      }
       const data = await response.json()
       setImageSrc(data.imageUrl);
     } catch (error) {
@@ -66,8 +71,8 @@ export default function Home() {
               <Image
                 src={preview}
                 alt="Uploaded Image"
-                width={150}
-                height={150}
+                width={480}
+                height={480}
                 className="rounded-lg shadow-md mt-1"
               />
               <button
