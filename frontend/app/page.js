@@ -8,12 +8,17 @@ export default function Home() {
   const [image, setImage] = useState(null);
   const [imageSrc, setImageSrc] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [previous, setPrevious] = useState(null);
+  const [preview, setPreview] = useState(null);
 
   const handleImageUpload = (event) => {
     const img = event.target.files[0];
     setImage(img);
     setPreview(URL.createObjectURL(img));
+  };
+
+  const removeImage = (event) => {
+    setImage(null);
+    setPreview(null);
   };
 
   const generateImage = async () => {
@@ -39,7 +44,35 @@ export default function Home() {
     setLoading(false);
   };
 
-  return {
-    
-  }
+  return (
+    <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-black-100">
+      <h1 className="text-5xl font-bold mb-4 text-purple-600 font-[GenshinImpact]" >Genshinfy.App</h1>
+      <div className="flex space-x-4">
+        <input
+          type="file"
+          accept="image/*"
+          onChange={handleImageUpload}
+          className="p-2 border rounded w-80"
+        />
+        { preview && (
+          <div className="mt-2 text-center">
+              <p className="text-sm text-purple-320">You uploaded this image:</p>
+              <Image
+                src={preview}
+                alt="Uploaded Image"
+                width={150}
+                height={150}
+                className="rounded-lg shadow-md mt-1"
+              />
+              <button
+                onClick={removeImage}
+                className="bg-red-500 text-white px-2 py-1 rounded mt-2"
+              >
+              Remove Image
+              </button>
+            </div>
+        )}
+      </div>
+    </div>
+  );
 }
