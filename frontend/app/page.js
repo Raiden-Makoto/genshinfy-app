@@ -46,17 +46,23 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-black-100">
-      <h1 className="text-5xl font-bold mb-4 text-purple-600 font-[GenshinImpact]" >Genshinfy.App</h1>
+      <h1 className="text-5xl font-bold mb-4 text-purple-400 font-[GenshinImpact]">Genshinfy.App</h1>
       <div className="flex space-x-4">
-        <input
-          type="file"
-          accept="image/*"
-          onChange={handleImageUpload}
-          className="p-2 border rounded w-80"
-        />
-        { preview && (
-          <div className="mt-2 text-center">
-              <p className="text-sm text-purple-320">You uploaded this image:</p>
+        <div className="flex flex-col items-center">
+          <div className="relative">
+            <input
+              type="file"
+              accept="image/*"
+              onChange={handleImageUpload}
+              className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+            />
+            <button className="bg-purple-500 text-white px-4 py-2 rounded shadow-md hover:bg-purple-600">
+              Choose File
+            </button>
+          </div>
+          {preview && (
+            <div className="mt-2 text-center">
+              <p className="text-sm text-purple-600 font-[GenshinImpact]">You uploaded:</p>
               <Image
                 src={preview}
                 alt="Uploaded Image"
@@ -66,11 +72,39 @@ export default function Home() {
               />
               <button
                 onClick={removeImage}
-                className="bg-red-500 text-white px-2 py-1 rounded mt-2"
+                className="bg-red-500 text-white px-2 py-1 rounded mt-2 font-[GenshinImpact]"
               >
-              Remove Image
+                Remove
               </button>
             </div>
+          )}
+        </div>
+        <div className="flex flex-col items-center">
+          <input
+            type="text"
+            value={prompt}
+            onChange={(e) => setPrompt(e.target.value)}
+            className="p-2 border rounded w-80 text-purple-400"
+            placeholder="Enter your prompt..."
+          />
+          <button
+            onClick={generateImage}
+            className="bg-green-500 text-white px-4 py-2 rounded mt-2"
+            disabled={loading}
+          >
+            {loading ? "Generating..." : "Generate"}
+          </button>
+        </div>
+      </div>
+      <div className="flex justify-center mt-4">
+        {imageSrc && (
+          <Image
+            src={imageSrc}
+            alt="Generated Image"
+            width={400}
+            height={400}
+            className="rounded-lg shadow-lg"
+          />
         )}
       </div>
     </div>
