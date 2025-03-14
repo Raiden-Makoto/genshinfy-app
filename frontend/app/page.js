@@ -62,7 +62,8 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-black-100">
+    <div className="flex flex-col items-center justify-start min-h-screen p-4 bg-black-100">
+      <main className="flex-grow flex flex-col items-center justify-starts text-center px-4">
       <h1 className="text-5xl font-bold mb-4 text-purple-400 font-[GenshinImpact]">
         Genshinfy.App
       </h1>
@@ -143,6 +144,7 @@ export default function Home() {
           />
         )}
       </div>
+      </main>
       <Footer />
     </div>
   );
