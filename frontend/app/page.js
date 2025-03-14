@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useEffect } from "react";
+//import { useEffect } from "react";
 import Image from "next/image";
 import Footer from './footer'
 
@@ -12,13 +12,13 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [preview, setPreview] = useState(null);
 
-  useEffect(() => {
+ /* useEffect(() => {
     const link = document.createElement("link");
     link.rel = "icon";
     link.type = "image/jpg";
     link.href = "./glassespaimon.jpg"; // Your custom favicon filename
     document.head.appendChild(link);
-  }, []);
+  }, []);*/
   
 
   const handleImageUpload = (event) => {
@@ -78,7 +78,7 @@ export default function Home() {
         For example, <i>cat ears, green eyes, female.</i>
       </p>
       <p className="text-lg mb-4 text-white-100 font-[GenshinImpact]">
-        The generator will automatically select the image that most closely matches the input criteria.
+        The model will automatically select the image that most closely matches the input criteria.
       </p>
       <div className="flex space-x-4">
         <div className="flex flex-col items-center">
