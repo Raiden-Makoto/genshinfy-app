@@ -80,17 +80,30 @@ export default function Home() {
       <p className="text-lg mb-4 text-white-100 font-[GenshinImpact]">
         The model will automatically select the image that most closely matches the input criteria.
       </p>
-      <div className="flex space-x-4">
-        <div className="flex flex-col items-center">
-          <div className="relative">
+        <div className="flex items-center space-x-32 mb-6"> 
+          <div className="relative ml-4 mr-4">
             <input
               type="file"
               accept="image/*"
               onChange={handleImageUpload}
               className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
             />
-            <button className="bg-purple-500 text-white px-4 py-2 rounded shadow-md hover:bg-purple-600 font-[GenshinImpact]">
+            <button className="bg-purple-500 text-white px-4 py-2 rounded shadow-md hover:bg-purple-400 font-[GenshinImpact]">
               Choose File
+            </button>
+            <input
+              type="text"
+              value={prompt}
+              onChange={(e) => setPrompt(e.target.value)}
+              className="p-2 border rounded w-80 text-purple-400 mx-4 font-[GenshinImpact]"
+              placeholder="Enter desired qualities..."
+            />
+            <button
+              onClick={generateImage}
+              className="bg-purple-500 text-white px-4 py-2 rounded mt-2 font-[GenshinImpact]"
+              disabled={loading}
+            >
+              {loading ? "Generating..." : "Generate"}
             </button>
           </div>
           {preview && (
@@ -112,23 +125,6 @@ export default function Home() {
             </div>
           )}
         </div>
-        <div className="flex flex-col items-center">
-          <input
-            type="text"
-            value={prompt}
-            onChange={(e) => setPrompt(e.target.value)}
-            className="p-2 border rounded w-80 text-purple-400 font-[GenshinImpact]"
-            placeholder="Enter desired qualities..."
-          />
-          <button
-            onClick={generateImage}
-            className="bg-purple-500 text-white px-4 py-2 rounded mt-2 font-[GenshinImpact]"
-            disabled={loading}
-          >
-            {loading ? "Generating..." : "Generate"}
-          </button>
-        </div>
-      </div>
       <div className="flex justify-center mt-4">
         {imageSrc && (
           <Image
