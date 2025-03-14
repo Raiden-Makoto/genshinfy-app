@@ -80,32 +80,38 @@ export default function Home() {
       <p className="text-lg mb-4 text-white-100 font-[GenshinImpact]">
         The model will automatically select the image that most closely matches the input criteria.
       </p>
-        <div className="flex items-center space-x-32 mb-6"> 
-          <div className="relative ml-4 mr-4">
-            <input
-              type="file"
-              accept="image/*"
-              onChange={handleImageUpload}
-              className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
-            />
-            <button className="bg-purple-500 text-white px-4 py-2 rounded shadow-md hover:bg-purple-400 font-[GenshinImpact]">
-              Choose File
-            </button>
+        <div className="flex items-center space-x-6 mb-6"> 
+          <div className="relative">
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handleImageUpload}
+                className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+              />
+              <button className="bg-purple-500 text-white px-4 py-2 rounded shadow-md hover:bg-purple-400 font-[GenshinImpact]">
+                Choose File
+              </button>
+            </div>
+            <div className="relative">
             <input
               type="text"
               value={prompt}
               onChange={(e) => setPrompt(e.target.value)}
-              className="p-2 border rounded w-80 text-purple-400 mx-4 font-[GenshinImpact]"
+              className="p-2 border rounded w-80 text-purple-400 font-[GenshinImpact]"
               placeholder="Enter desired qualities..."
             />
+            </div>
+            <div className="relative">
             <button
               onClick={generateImage}
-              className="bg-purple-500 text-white px-4 py-2 rounded mt-2 font-[GenshinImpact]"
+              className="bg-purple-500 text-white px-4 py-2 rounded shadow-md font-[GenshinImpact]"
               disabled={loading}
             >
               {loading ? "Generating..." : "Generate"}
             </button>
+            </div>
           </div>
+          <div className="flex justify-center">
           {preview && (
             <div className="mt-2 text-center">
               <p className="text-sm text-purple-600 font-[GenshinImpact]">You uploaded:</p>
