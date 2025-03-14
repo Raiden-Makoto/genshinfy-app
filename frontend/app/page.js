@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { useEffect } from "react";
 import Image from "next/image";
+import Footer from './footer'
 
 export default function Home() {
   const [prompt, setPrompt] = useState("");
@@ -9,6 +11,15 @@ export default function Home() {
   const [imageSrc, setImageSrc] = useState(null);
   const [loading, setLoading] = useState(false);
   const [preview, setPreview] = useState(null);
+
+  useEffect(() => {
+    const link = document.createElement("link");
+    link.rel = "icon";
+    link.type = "image/jpg";
+    link.href = "./glassespaimon.jpg"; // Your custom favicon filename
+    document.head.appendChild(link);
+  }, []);
+  
 
   const handleImageUpload = (event) => {
     const img = event.target.files[0];
@@ -111,7 +122,7 @@ export default function Home() {
           />
           <button
             onClick={generateImage}
-            className="bg-green-500 text-white px-4 py-2 rounded mt-2 font-[GenshinImpact]"
+            className="bg-purple-500 text-white px-4 py-2 rounded mt-2 font-[GenshinImpact]"
             disabled={loading}
           >
             {loading ? "Generating..." : "Generate"}
@@ -129,6 +140,7 @@ export default function Home() {
           />
         )}
       </div>
+      <Footer />
     </div>
   );
 }
