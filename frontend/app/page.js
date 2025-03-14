@@ -63,8 +63,15 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center justify-start min-h-screen p-4 bg-black-100">
+    <div className="absolute top-4 right-4">
+      <a href="/character-page">
+        <button className="bg-purple-500 text-white px-4 py-2 rounded shadow-md hover:bg-purple-600 font-[GenshinImpact]">
+          View Character List
+        </button>
+      </a>
+    </div>
       <main className="flex-grow flex flex-col items-center justify-starts text-center px-4">
-      <h1 className="text-5xl font-bold mb-4 text-purple-400 font-[GenshinImpact]">
+      <h1 className="text-7xl font-bold mb-4 text-purple-400 font-[GenshinImpact]">
         Genshinfy.App
       </h1>
       <h2 className="text-3xl font-bold mb-4 text-purple-300 font-[GenshinImpact]">
@@ -99,7 +106,7 @@ export default function Home() {
               type="text"
               value={prompt}
               onChange={(e) => setPrompt(e.target.value)}
-              className="p-2 border rounded w-80 text-purple-400 font-[GenshinImpact]"
+              className="p-2 border rounded w-80 text-white-600 font-[GenshinImpact]"
               placeholder="Enter desired qualities..."
             />
             </div>
