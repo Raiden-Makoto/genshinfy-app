@@ -51,7 +51,24 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-black-100">
-      <h1 className="text-5xl font-bold mb-4 text-purple-400 font-[GenshinImpact]">Genshinfy.App</h1>
+      <h1 className="text-5xl font-bold mb-4 text-purple-400 font-[GenshinImpact]">
+        Genshinfy.App
+      </h1>
+      <h2 className="text-3xl font-bold mb-4 text-purple-300 font-[GenshinImpact]">
+        Turn yourself into a Genshin Impact character!
+      </h2>
+      <p className="text-lg mb-1 text-white-100 font-[GenshinImpact]">
+        To get started, upload a photo of yourself from the shoulders up.
+      </p>
+      <p className="text-lg mb-1 text-white-100 font-[GenshinImpact]">
+        Then enter as many qualities as you'd like your character to have.
+      </p>
+      <p className="text-lg mb-1 text-white-100 font-[GenshinImpact]">
+        For example, <i>cat ears, green eyes, female.</i>
+      </p>
+      <p className="text-lg mb-4 text-white-100 font-[GenshinImpact]">
+        The generator will automatically select the image that most closely matches the input criteria.
+      </p>
       <div className="flex space-x-4">
         <div className="flex flex-col items-center">
           <div className="relative">
@@ -61,7 +78,7 @@ export default function Home() {
               onChange={handleImageUpload}
               className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
             />
-            <button className="bg-purple-500 text-white px-4 py-2 rounded shadow-md hover:bg-purple-600">
+            <button className="bg-purple-500 text-white px-4 py-2 rounded shadow-md hover:bg-purple-600 font-[GenshinImpact]">
               Choose File
             </button>
           </div>
@@ -89,12 +106,12 @@ export default function Home() {
             type="text"
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
-            className="p-2 border rounded w-80 text-purple-400"
-            placeholder="Enter your prompt..."
+            className="p-2 border rounded w-80 text-purple-400 font-[GenshinImpact]"
+            placeholder="Enter desired qualities..."
           />
           <button
             onClick={generateImage}
-            className="bg-green-500 text-white px-4 py-2 rounded mt-2"
+            className="bg-green-500 text-white px-4 py-2 rounded mt-2 font-[GenshinImpact]"
             disabled={loading}
           >
             {loading ? "Generating..." : "Generate"}
