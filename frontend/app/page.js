@@ -47,6 +47,7 @@ export default function Home() {
         method: "POST",
         body: formData,
       });
+      console.log(response);
       if (!response.ok) {
         const errorText = await response.text();
         alert(`Error: ${response.status} - ${errorText}`);
