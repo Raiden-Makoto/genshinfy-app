@@ -4,6 +4,7 @@ import { useState } from "react";
 //import { useEffect } from "react";
 import Image from "next/image";
 import Footer from './footer'
+import Link from "next/link";
 
 export default function Home() {
   const [prompt, setPrompt] = useState("");
@@ -64,11 +65,11 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center justify-start min-h-screen p-4 bg-black-100">
     <div className="absolute top-4 right-4">
-      <a href="/character-page">
+    <Link href="/characters">
         <button className="bg-purple-500 text-white px-4 py-2 rounded shadow-md hover:bg-purple-600 font-[GenshinImpact]">
           View Character List
         </button>
-      </a>
+    </Link>
     </div>
       <main className="flex-grow flex flex-col items-center justify-starts text-center px-4">
       <h1 className="text-7xl font-bold mb-4 text-purple-400 font-[GenshinImpact]">
