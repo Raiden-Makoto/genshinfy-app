@@ -13,7 +13,7 @@ export default function CarouselPage(){
             </button>
         </Link>
         </div>
-        <h1 className="text-5xl font-bold mt-4 mb-4 text-purple-500 font-[GenshinImpact]">View Characters by Region</h1>
+        <h1 className="text-5xl font-bold mt-4 mb-4 text-purple-400 font-[GenshinImpact]">View Characters by Region</h1>
         <CarouselStack />
         </div>
     );

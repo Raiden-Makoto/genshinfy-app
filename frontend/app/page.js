@@ -124,7 +124,7 @@ export default function Home() {
           <div className="flex justify-center">
           {preview && (
             <div className="mt-2 text-center">
-              <p className="text-sm text-purple-600 font-[GenshinImpact]">You uploaded:</p>
+              <p className="text-md font-bold text-purple-300 font-[GenshinImpact]">You uploaded:</p>
               <Image
                 src={preview}
                 alt="Uploaded Image"

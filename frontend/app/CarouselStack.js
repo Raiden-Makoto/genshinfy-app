@@ -59,7 +59,7 @@ const CarouselStack = () => {
     <div className="page-container">
       {regions.map((region, index) => (
         <div key={index} className="carousel-section">
-          <h1 className="region-title text-3xl font-bold mb-4 text-purple-400 font-[GenshinImpact]">{region.name}</h1>
+          <h1 className="region-title text-3xl font-bold mb-4 text-purple-300 font-[GenshinImpact]">{region.name}</h1>
           <Swiper
             spaceBetween={10}
             slidesPerView={1}
