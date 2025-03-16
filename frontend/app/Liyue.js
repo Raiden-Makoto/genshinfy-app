@@ -52,7 +52,7 @@ export default function Liyue () {
             </button>
           </div>
           <div className="relative">
-          <p className="text-white text-2xl mt-2 font-bold font-[GenshinImpact]">
+          <p className="text-yellow-300 text-2xl mt-2 font-bold font-[GenshinImpact]">
             {currentCharacter.name}
           </p>
           </div>
