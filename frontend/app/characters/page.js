@@ -1,6 +1,6 @@
 "use client"
 
-import CarouselStack from "../CarouselStack";
+import Mondstadt from "../Mondstadt";
 import Link from "next/link";
 
 export default function CarouselPage(){
@@ -14,7 +14,7 @@ export default function CarouselPage(){
         </Link>
         </div>
         <h1 className="text-5xl font-bold mt-4 mb-4 text-purple-400 font-[GenshinImpact]">View Characters by Region</h1>
-        <CarouselStack />
+        <Mondstadt />
         </div>
     );
 }
