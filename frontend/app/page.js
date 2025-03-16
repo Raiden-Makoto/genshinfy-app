@@ -67,7 +67,7 @@ export default function Home() {
     <div className="absolute top-4 right-4">
     <Link href="/characters">
         <button className="bg-purple-500 text-white px-4 py-2 rounded shadow-md hover:bg-purple-600 font-[GenshinImpact]">
-          View Character List
+          View Characters
         </button>
     </Link>
     </div>
