@@ -2,7 +2,7 @@
 
 import Mondstadt from "../Mondstadt";
 import Liyue from "../Liyue";
-//import Inazuma from "../Inazuma";
+import Inazuma from "../Inazuma";
 //import Sumeru from "../Sumeru";
 //import Fontaine from "../Fontaine";
 //import Natlan from "../Natlan";
@@ -22,8 +22,8 @@ export default function CarouselPage(){
         <h1 className="text-5xl font-bold mt-4 mb-4 text-purple-400 font-[GenshinImpact]">View Characters by Region</h1>
         <Mondstadt />
         <Liyue />
-        {/* <Inazuma />
-        <Sumeru />
+        <Inazuma />
+        {/* <Sumeru />
         <Fontaine />
         <Natlan />
         <Snezhnaya /> */}
