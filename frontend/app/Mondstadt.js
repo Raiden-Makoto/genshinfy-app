@@ -46,7 +46,7 @@ export default function Mondstadt () {
         <div className="flex items-center space-x-6 mb-6"> 
           <div className="relative">
             <button
-              className="bg-green-400 text-black mt-2 px-4 py-2 rounded shadow-md hover:bg-purple-600 font-[GenshinImpact]"
+              className="bg-green-400 text-black mt-2 px-4 py-2 rounded shadow-md hover:bg-green-600 font-[GenshinImpact]"
               onClick={prevCharacter}
             >
               Prev
@@ -59,7 +59,7 @@ export default function Mondstadt () {
           </div>
           <div className="relative">
             <button
-              className="bg-green-400 text-black mt-2 px-4 py-2 rounded shadow-md hover:bg-purple-600 font-[GenshinImpact]"
+              className="bg-green-400 text-black mt-2 px-4 py-2 rounded shadow-md hover:bg-green-600 font-[GenshinImpact]"
               onClick={nextCharacter}
             >
               Next

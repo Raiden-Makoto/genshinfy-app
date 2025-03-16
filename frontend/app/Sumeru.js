@@ -5,22 +5,20 @@ export default function Liyue () {
   const region = {
       name: 'Sumeru',
       characters: [
-        { name: 'Raiden Shogun', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-app/851c2470ba1573027f3f2599becf0c1dfb140c4a/backend/model/GenshinCharacters/Ei.png" },
-        { name: 'Kamisato Ayaka', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-app/851c2470ba1573027f3f2599becf0c1dfb140c4a/backend/model/GenshinCharacters/Ayaka.png" },
-        { name: 'Kamisato Ayato', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-app/851c2470ba1573027f3f2599becf0c1dfb140c4a/backend/model/GenshinCharacters/Ayato.png" },
-        { name: 'Yae Miko', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-app/851c2470ba1573027f3f2599becf0c1dfb140c4a/backend/model/GenshinCharacters/Yaemiko.png" },
-        { name: 'Yoimiya', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-app/851c2470ba1573027f3f2599becf0c1dfb140c4a/backend/model/GenshinCharacters/Yoimiya.png" },
-        { name: 'Arataki Itto', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-app/851c2470ba1573027f3f2599becf0c1dfb140c4a/backend/model/GenshinCharacters/Arataki.png" },
-        { name: 'Sayu', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-app/851c2470ba1573027f3f2599becf0c1dfb140c4a/backend/model/GenshinCharacters/Sayu.png" },
-        { name: 'Gorou', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-app/851c2470ba1573027f3f2599becf0c1dfb140c4a/backend/model/GenshinCharacters/Gorou.png" },
-        { name: 'Chiori', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-app/851c2470ba1573027f3f2599becf0c1dfb140c4a/backend/model/GenshinCharacters/Chiori.png" },
-        { name: 'Shikanoin Heizou', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-app/851c2470ba1573027f3f2599becf0c1dfb140c4a/backend/model/GenshinCharacters/Heizou.png" },
-        { name: 'Kirara', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-app/851c2470ba1573027f3f2599becf0c1dfb140c4a/backend/model/GenshinCharacters/Kirara.png" },
-        { name: 'Sangonomiya Kokomi', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-app/851c2470ba1573027f3f2599becf0c1dfb140c4a/backend/model/GenshinCharacters/Sangonomiya.png" },
-        { name: 'Yumemizuki Mizuki', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-app/851c2470ba1573027f3f2599becf0c1dfb140c4a/backend/model/GenshinCharacters/Mizuki.png" },
-        { name: 'Kuki Shinobu', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-app/851c2470ba1573027f3f2599becf0c1dfb140c4a/backend/model/GenshinCharacters/Shinobu.png" },
-        { name: 'Kujou Sara', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-app/851c2470ba1573027f3f2599becf0c1dfb140c4a/backend/model/GenshinCharacters/Kujousara.png" },
-        { name: ' Kaedehara Kazuha', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-app/851c2470ba1573027f3f2599becf0c1dfb140c4a/backend/model/GenshinCharacters/Kazuha.png" },
+        { name: 'Collei', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-app/851c2470ba1573027f3f2599becf0c1dfb140c4a/backend/model/GenshinCharacters/Collei.png" },
+        { name: 'Tighnari', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-app/851c2470ba1573027f3f2599becf0c1dfb140c4a/backend/model/GenshinCharacters/Tighnari.png" },
+        { name: 'Cyno', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-app/851c2470ba1573027f3f2599becf0c1dfb140c4a/backend/model/GenshinCharacters/Cyno.png" },
+        { name: 'Dehya', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-app/851c2470ba1573027f3f2599becf0c1dfb140c4a/backend/model/GenshinCharacters/Dehya.png" },
+        { name: 'Nahida', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-app/851c2470ba1573027f3f2599becf0c1dfb140c4a/backend/model/GenshinCharacters/Nahida.png" },
+        { name: 'Wanderer', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-app/851c2470ba1573027f3f2599becf0c1dfb140c4a/backend/model/GenshinCharacters/Wanderer.png" },
+        { name: 'Alhaitham', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-app/851c2470ba1573027f3f2599becf0c1dfb140c4a/backend/model/GenshinCharacters/Alhaitham.png" },
+        { name: 'Candace', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-app/851c2470ba1573027f3f2599becf0c1dfb140c4a/backend/model/GenshinCharacters/Candace.png" },
+        { name: 'Nilou', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-app/851c2470ba1573027f3f2599becf0c1dfb140c4a/backend/model/GenshinCharacters/Nilou.png" },
+        { name: 'Dori', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-app/851c2470ba1573027f3f2599becf0c1dfb140c4a/backend/model/GenshinCharacters/Dori.png" },
+        { name: 'Faruzan', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-app/851c2470ba1573027f3f2599becf0c1dfb140c4a/backend/model/GenshinCharacters/Faruzan.png" },
+        { name: 'Kaveh', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-app/851c2470ba1573027f3f2599becf0c1dfb140c4a/backend/model/GenshinCharacters/Kaveh.png" },
+        { name: 'Layla', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-app/851c2470ba1573027f3f2599becf0c1dfb140c4a/backend/model/GenshinCharacters/Layla.png" },
+        { name: 'Sethos', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-app/851c2470ba1573027f3f2599becf0c1dfb140c4a/backend/model/GenshinCharacters/Sethos.png" },
       ],
     };
     const currentCharacter = useMemo(() => region.characters[currentIndex], [currentIndex]);
@@ -43,7 +41,7 @@ export default function Liyue () {
         <div className="flex items-center space-x-6 mb-6"> 
           <div className="relative">
             <button
-              className="bg-green-700 text-white mt-2 px-4 py-2 rounded shadow-md hover:bg-purple-600 font-[GenshinImpact]"
+              className="bg-green-700 text-white mt-2 px-4 py-2 rounded shadow-md hover:bg-green-800 font-[GenshinImpact]"
               onClick={prevCharacter}
             >
               Prev
@@ -56,7 +54,7 @@ export default function Liyue () {
           </div>
           <div className="relative">
             <button
-              className="bg-green-700 text-white mt-2 px-4 py-2 rounded shadow-md hover:bg-purple-600 font-[GenshinImpact]"
+              className="bg-green-700 text-white mt-2 px-4 py-2 rounded shadow-md hover:bg-green-800 font-[GenshinImpact]"
               onClick={nextCharacter}
             >
               Next
