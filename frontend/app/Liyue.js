@@ -45,7 +45,7 @@ export default function Liyue () {
         <div className="flex items-center space-x-6 mb-6"> 
           <div className="relative">
             <button
-              className="bg-purple-500 text-white mt-2 px-4 py-2 rounded shadow-md hover:bg-purple-600 font-[GenshinImpact]"
+              className="bg-yellow-300 text-black mt-2 px-4 py-2 rounded shadow-md hover:bg-purple-600 font-[GenshinImpact]"
               onClick={prevCharacter}
             >
               Prev
@@ -58,7 +58,7 @@ export default function Liyue () {
           </div>
           <div className="relative">
             <button
-              className="bg-purple-500 text-white mt-2 px-4 py-2 rounded shadow-md hover:bg-purple-600 font-[GenshinImpact]"
+              className="bg-yellow-300 text-black mt-2 px-4 py-2 rounded shadow-md hover:bg-purple-600 font-[GenshinImpact]"
               onClick={nextCharacter}
             >
               Next

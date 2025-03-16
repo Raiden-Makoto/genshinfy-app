@@ -3,7 +3,7 @@
 import Mondstadt from "../Mondstadt";
 import Liyue from "../Liyue";
 import Inazuma from "../Inazuma";
-//import Sumeru from "../Sumeru";
+import Sumeru from "../Sumeru";
 //import Fontaine from "../Fontaine";
 //import Natlan from "../Natlan";
 //import Snezhnaya from "../Snezhnaya";
@@ -19,12 +19,12 @@ export default function CarouselPage(){
             </button>
         </Link>
         </div>
-        <h1 className="text-5xl font-bold mt-4 mb-4 text-purple-400 font-[GenshinImpact]">View Characters by Region</h1>
+        <h1 className="text-5xl font-bold mt-4 mb-4 text-white font-[GenshinImpact]">View Characters by Region</h1>
         <Mondstadt />
         <Liyue />
         <Inazuma />
-        {/* <Sumeru />
-        <Fontaine />
+        <Sumeru />
+        {/*<Fontaine />
         <Natlan />
         <Snezhnaya /> */}
         </div>
