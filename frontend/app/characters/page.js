@@ -1,6 +1,12 @@
 "use client"
 
 import Mondstadt from "../Mondstadt";
+import Liyue from "../Liyue";
+//import Inazuma from "../Inazuma";
+//import Sumeru from "../Sumeru";
+//import Fontaine from "../Fontaine";
+//import Natlan from "../Natlan";
+//import Snezhnaya from "../Snezhnaya";
 import Link from "next/link";
 
 export default function CarouselPage(){
@@ -15,6 +21,12 @@ export default function CarouselPage(){
         </div>
         <h1 className="text-5xl font-bold mt-4 mb-4 text-purple-400 font-[GenshinImpact]">View Characters by Region</h1>
         <Mondstadt />
+        <Liyue />
+        {/* <Inazuma />
+        <Sumeru />
+        <Fontaine />
+        <Natlan />
+        <Snezhnaya /> */}
         </div>
     );
 }

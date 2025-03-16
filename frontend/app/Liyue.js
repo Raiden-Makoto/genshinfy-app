@@ -1,9 +1,9 @@
 import { useState, useMemo, useCallback } from "react";
 
-export default function Mondstadt () { 
+export default function Liyue () { 
   const [currentIndex, setCurrentIndex] = useState(0);
   const region = {
-      name: 'Mondstadt',
+      name: 'Liyue',
       characters: [
         { name: 'Albedo', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-app/851c2470ba1573027f3f2599becf0c1dfb140c4a/backend/model/GenshinCharacters/Albedo.png" },
         { name: 'Amber', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-app/851c2470ba1573027f3f2599becf0c1dfb140c4a/backend/model/GenshinCharacters/Amber.png" },
