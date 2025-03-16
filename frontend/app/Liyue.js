@@ -34,7 +34,7 @@ export default function Liyue () {
     }, []);
     return (
       <div className="flex flex-col items-center justify-center p-6">
-        <h1 className="text-3xl font-bold mb-4 text-purple-300 font-[GenshinImpact]">{region.name}</h1>
+        <h1 className="text-3xl font-bold mb-4 text-yellow-300 font-[GenshinImpact]">{region.name}</h1>
         <div className="flex flex-col items-center">
           <img
             src={currentCharacter.image}
