@@ -30,7 +30,7 @@ const CarouselStack = () => {
         { name: 'Venti', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-app/851c2470ba1573027f3f2599becf0c1dfb140c4a/backend/model/GenshinCharacters/Venti.png" },
       ],
     },
-    {
+    /*{
       name: 'Liyue',
       characters: [
         { name: 'Baizhu', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-app/851c2470ba1573027f3f2599becf0c1dfb140c4a/backend/model/GenshinCharacters/Baizhu.png" },
@@ -52,7 +52,7 @@ const CarouselStack = () => {
         { name: 'Yaoyao', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-app/851c2470ba1573027f3f2599becf0c1dfb140c4a/backend/model/GenshinCharacters/Yaoyao.png" },
         { name: 'Yunjin', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-app/851c2470ba1573027f3f2599becf0c1dfb140c4a/backend/model/GenshinCharacters/Yunjin.png" },
       ],
-    },
+    },*/
   ];
 
   return (
@@ -64,7 +64,6 @@ const CarouselStack = () => {
             spaceBetween={10}
             slidesPerView={1}
             navigation
-            //autoplay={{ delay: 3000 }}
             loop={true}
             centeredSlides={true}
             style={{ width: '100%', height: '300px' }}
@@ -76,76 +75,77 @@ const CarouselStack = () => {
                   alt={character.name}
                   className="character-image"
                 />
-                <p className="character-name">{character.name}</p>
+                <p className="character-name text-purple-400 text-lg font-bold mt-2 bg-red-500 shadow-md z-10">
+                    {character.name}
+                </p>
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
       ))}
       <style jsx>{`
-  .page-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
+        .page-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
 
-  .carousel-section {
-    width: 100%;
-    max-width: 800px; /* Adjusted max width */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 40px;
-  }
+        .carousel-section {
+            width: 100%;
+            max-width: 800px; /* Adjusted max width */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 40px;
+        }
 
-  .region-title {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
+        .region-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
 
-  .swiper-container {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    width: 100%;  /* Ensure swiper occupies full width */
-  }
+        .swiper-container {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            width: 100%;  /* Ensure swiper occupies full width */
+        }
 
-  .swiper-wrapper {
-    display: flex;
-    justify-content: center;  /* Center content inside swiper */
-  }
+        .swiper-wrapper {
+            display: flex;
+            justify-content: center;  /* Center content inside swiper */
+        }
 
-  .character-slide {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 200px; /* Ensure slides are a fixed width */
-    margin: 0 5px; /* Small space between slides */
-  }
+        .character-slide {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 200px; /* Ensure slides are a fixed width */
+            margin: 0 5px; /* Small space between slides */
+        }
 
-  .character-image {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  }
+        .character-image {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
 
-  .character-name {
-    margin-top: 10px;
-    font-size: 18px;
-    font-weight: bold;
-  }
+        .character-name {
+            visibility: visible;
+            display: block;
+        }
 
-  /* Style for navigation buttons */
-  .swiper-button-next, .swiper-button-prev {
-    color: #000;  /* Adjust the color of arrows */
-  }
-`}</style>
+        /* Style for navigation buttons */
+        .swiper-button-next, .swiper-button-prev {
+            color: purple;  /* Adjust the color of arrows */
+        }
+    `}</style>
     </div>
   );
 };
