@@ -36,28 +36,36 @@ export default function Mondstadt () {
     return (
       <div className="flex flex-col items-center justify-center p-6">
         <h1 className="text-3xl font-bold mb-4 text-purple-300 font-[GenshinImpact]">{region.name}</h1>
-        <div className="flex items-center justify-center space-x-4">
-        <button
-          className="bg-purple-500 text-white px-4 py-2 rounded shadow-md hover:bg-purple-600 font-[GenshinImpact]"
-          onClick={prevCharacter}
-        > Prev
-        </button>
         <div className="flex flex-col items-center">
           <img
             src={currentCharacter.image}
             alt={currentCharacter.name}
             className="w-auto h-auto max-w-full max-h-full object-contain rounded-lg shadow-md"
           />
-          <p className="text-purple-400 text-2xl font-bold mt-2 shadow-md font-[GenshinImpact]">
+        </div>
+        <div className="flex items-center space-x-6 mb-6"> 
+          <div className="relative">
+            <button
+              className="bg-purple-500 text-white mt-2 px-4 py-2 rounded shadow-md hover:bg-purple-600 font-[GenshinImpact]"
+              onClick={prevCharacter}
+            >
+              Prev
+            </button>
+          </div>
+          <div className="relative">
+          <p className="text-white text-xl font-bold mt-2 shadow-md font-[GenshinImpact] bg-purple-500 px-4 py-2 rounded">
             {currentCharacter.name}
           </p>
-        </div>
-        <button
-          className="bg-purple-500 text-white px-4 py-2 rounded shadow-md hover:bg-purple-600 font-[GenshinImpact]"
-          onClick={nextCharacter}
-        > Next
-        </button>
+          </div>
+          <div className="relative">
+            <button
+              className="bg-purple-500 text-white mt-2 px-4 py-2 rounded shadow-md hover:bg-purple-600 font-[GenshinImpact]"
+              onClick={nextCharacter}
+            >
+              Next
+            </button>
+          </div>
         </div>
       </div>
-    );
+    );    
 };
