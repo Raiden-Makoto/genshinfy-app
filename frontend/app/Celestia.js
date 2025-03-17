@@ -1,12 +1,16 @@
+"use client"
+
 import { useState, useMemo, useCallback } from "react";
+
 
 export default function Celestia () { 
   const [currentIndex, setCurrentIndex] = useState(0);
   const region = {
       name: 'Beyond Teyvat',
       characters: [
-        { name: 'Aether', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-app/851c2470ba1573027f3f2599becf0c1dfb140c4a/backend/model/GenshinCharacters/Aether.png" },
         { name: 'Lumine', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-app/851c2470ba1573027f3f2599becf0c1dfb140c4a/backend/model/GenshinCharacters/Lumine.png" },
+        { name: 'Aether', image: "https://raw.githubusercontent.com/Raiden-Makoto/Genshinfy-UwU/refs/heads/main/GenshinCharacters/Aether.png" },
+        { name: 'Paimon', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-UwU/refs/heads/main/GenshinCharacters/Paimon.png" },
       ],
     };
     const currentCharacter = useMemo(() => region.characters[currentIndex], [currentIndex]);
@@ -18,7 +22,7 @@ export default function Celestia () {
     }, []);
     return (
       <div className="flex flex-col items-center justify-center p-6">
-        <h1 className="text-3xl font-bold mb-4 text-blue-200 font-[GenshinImpact]">{region.name}</h1>
+        <h1 className="text-3xl font-bold mb-4 text-white font-[GenshinImpact]">{region.name}</h1>
         <div className="flex flex-col items-center">
           <img
             src={currentCharacter.image}
@@ -36,7 +40,7 @@ export default function Celestia () {
             </button>
           </div>
           <div className="relative">
-          <p className="text-black text-2xl mt-2 font-bold font-[GenshinImpact]">
+          <p className="text-white text-2xl mt-2 font-bold font-[GenshinImpact]">
             {currentCharacter.name}
           </p>
           </div>

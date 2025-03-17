@@ -21,14 +21,16 @@ export default function CarouselPage(){
         </Link>
         </div>
         <h1 className="text-5xl font-bold mt-4 mb-4 text-white font-[GenshinImpact]">View Characters by Region</h1>
-        <Mondstadt />
-        <Liyue />
-        <Inazuma />
-        <Sumeru />
-        <Natlan />
-        <Fontaine />
-        <Snezhnaya />
-        <Celestia />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+            <Mondstadt />
+            <Liyue />
+            <Inazuma />
+            <Sumeru />
+            <Natlan />
+            <Fontaine />
+            <Snezhnaya />
+            <Celestia />
+        </div>
         </div>
     );
 }
