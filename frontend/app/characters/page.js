@@ -8,6 +8,8 @@ import Fontaine from "../Fontaine";
 import Natlan from "../Natlan";
 import Snezhnaya from "../Snezhnaya";
 import Celestia from "../Celestia";
+
+import Footer from "../footer";
 import Link from "next/link";
 
 export default function CarouselPage(){
@@ -21,6 +23,7 @@ export default function CarouselPage(){
         </Link>
         </div>
         <h1 className="text-5xl font-bold mt-4 mb-4 text-white font-[GenshinImpact]">View Characters by Region</h1>
+        <main className="flex-grow flex flex-col items-center justify-starts text-center px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
             <Mondstadt />
             <Liyue />
@@ -31,6 +34,8 @@ export default function CarouselPage(){
             <Snezhnaya />
             <Celestia />
         </div>
+        < Footer />
+        </main>
         </div>
     );
 }
