@@ -7,6 +7,7 @@ import Sumeru from "../Sumeru";
 import Fontaine from "../Fontaine";
 import Natlan from "../Natlan";
 import Snezhnaya from "../Snezhnaya";
+import Celestia from "../Celestia";
 import Link from "next/link";
 
 export default function CarouselPage(){
@@ -27,6 +28,7 @@ export default function CarouselPage(){
         <Natlan />
         <Fontaine />
         <Snezhnaya />
+        <Celestia />
         </div>
     );
 }
