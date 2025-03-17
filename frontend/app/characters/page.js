@@ -4,7 +4,7 @@ import Mondstadt from "../Mondstadt";
 import Liyue from "../Liyue";
 import Inazuma from "../Inazuma";
 import Sumeru from "../Sumeru";
-//import Fontaine from "../Fontaine";
+import Fontaine from "../Fontaine";
 import Natlan from "../Natlan";
 //import Snezhnaya from "../Snezhnaya";
 import Link from "next/link";
@@ -25,8 +25,8 @@ export default function CarouselPage(){
         <Inazuma />
         <Sumeru />
         <Natlan />
-        {/*<Fontaine />
-        <Snezhnaya /> */}
+        <Fontaine />
+        {/* <Snezhnaya /> */}
         </div>
     );
 }
