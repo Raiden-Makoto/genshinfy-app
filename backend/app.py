@@ -143,7 +143,7 @@ def deprocess_image(x):
 #model = keras.Model(inputs=VGG.inputs, outputs=outputs_dict)
 model = keras.saving.load_model('./model/Genshinfy.keras')
 
-@app.route('/predict', methods=['POST'])
+@app.route('/generate', methods=['POST'])
 def predict():
     request_data = request.get_json()
     if not "text" in request_data:
