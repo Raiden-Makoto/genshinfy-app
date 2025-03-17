@@ -6,7 +6,7 @@ import Inazuma from "../Inazuma";
 import Sumeru from "../Sumeru";
 import Fontaine from "../Fontaine";
 import Natlan from "../Natlan";
-//import Snezhnaya from "../Snezhnaya";
+import Snezhnaya from "../Snezhnaya";
 import Link from "next/link";
 
 export default function CarouselPage(){
@@ -26,7 +26,7 @@ export default function CarouselPage(){
         <Sumeru />
         <Natlan />
         <Fontaine />
-        {/* <Snezhnaya /> */}
+        <Snezhnaya />
         </div>
     );
 }
