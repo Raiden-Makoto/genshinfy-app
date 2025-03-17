@@ -12,7 +12,7 @@ export default function Natlan () {
         { name: 'Chasca', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-app/851c2470ba1573027f3f2599becf0c1dfb140c4a/backend/model/GenshinCharacters/Chasca.png" },
         { name: 'Xilonen', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-app/851c2470ba1573027f3f2599becf0c1dfb140c4a/backend/model/GenshinCharacters/Xilonen.png" },
         { name: 'Kinich', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-app/851c2470ba1573027f3f2599becf0c1dfb140c4a/backend/model/GenshinCharacters/Kinich.png" },
-        { name: 'Citali', image: "https://raw.githubusercontent.com/Raiden-Makoto/Genshinfy-UwU/refs/heads/main/GenshinCharacters/Citali.jpg" },
+        { name: 'Citlali', image: "https://raw.githubusercontent.com/Raiden-Makoto/Genshinfy-UwU/refs/heads/main/GenshinCharacters/Citali.jpg" },
         { name: 'Ororon', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-app/851c2470ba1573027f3f2599becf0c1dfb140c4a/backend/model/GenshinCharacters/Ororon.png" },
       ],
     };
