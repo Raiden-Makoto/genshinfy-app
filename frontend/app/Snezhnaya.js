@@ -1,9 +1,9 @@
 import { useState, useMemo, useCallback } from "react";
 
-export default function Fontaine () { 
+export default function Snezhnaya () { 
   const [currentIndex, setCurrentIndex] = useState(0);
   const region = {
-      name: 'Fontaine',
+      name: 'Snezhnaya',
       characters: [
         { name: 'Charlotte', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-app/851c2470ba1573027f3f2599becf0c1dfb140c4a/backend/model/GenshinCharacters/Charlotte.png" },
         { name: 'Chevreuse', image: "https://raw.githubusercontent.com/Raiden-Makoto/genshinfy-app/851c2470ba1573027f3f2599becf0c1dfb140c4a/backend/model/GenshinCharacters/Chevreuse.png" },

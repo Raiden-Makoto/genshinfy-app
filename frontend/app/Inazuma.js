@@ -1,6 +1,6 @@
 import { useState, useMemo, useCallback } from "react";
 
-export default function Liyue () { 
+export default function Inazuma () { 
   const [currentIndex, setCurrentIndex] = useState(0);
   const region = {
       name: 'Inazuma',
