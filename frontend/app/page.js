@@ -82,7 +82,7 @@ export default function Home() {
         To get started, upload a photo of yourself from the shoulders up.
       </p>
       <p className="text-lg mb-1 text-white-100 font-[GenshinImpact]">
-        Then enter as many qualities as you'd like your character to have.
+        Then enter as many qualities as you &apos d like your character to have.
       </p>
       <p className="text-lg mb-1 text-white-100 font-[GenshinImpact]">
         For example, <i>cat ears, green eyes, female.</i>
